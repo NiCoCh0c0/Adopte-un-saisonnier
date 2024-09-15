@@ -1,0 +1,198 @@
+/* Global Settings */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+/* Image de fond */
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Arrière-plan */
+}
+
+/* Boutons superposés */
+/* Boutons superposés */
+.action-buttons {
+    position: absolute;
+    top: 50%;
+    width: 90%; /* Réduit la largeur totale occupée par les boutons pour éviter qu'ils sortent de l'écran */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 2;
+    left: 50%;
+    transform: translateX(-50%); /* Centrer les boutons horizontalement */
+}
+
+.action-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.action-button img {
+    width: 60px;
+    height: 60px;
+}
+
+.action-button:active {
+    transform: scale(0.9);
+}
+
+
+/* Informations du job */
+.profile-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: left; /* Aligne le texte à gauche */
+    z-index: 3;
+}
+
+.profile-info h2, .profile-info p {
+    margin: 5px 0;
+}
+
+/* Modale et fond sombre */
+.modal {
+    display: none; /* Masqué par défaut */
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fond assombri */
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Ajoute un padding pour éviter que la modale touche les bords */
+}
+
+/* Contenu de la modale */
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px; /* Largeur maximale */
+    box-sizing: border-box; /* S'assure que le padding est pris en compte dans la taille */
+}
+
+/* Styles pour le formulaire dans la modale */
+.modal-content form {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacement entre les champs */
+}
+
+.modal-content label {
+    font-size: 16px;
+    margin-bottom: 5px; /* Espace entre le label et le champ */
+}
+
+.modal-content select,
+.modal-content input[type="text"] {
+    width: 100%; /* Assurer que le champ occupe 100% de la largeur disponible */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* S'assurer que le padding est inclus dans la largeur totale */
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.modal-content button:hover {
+    background-color: #2980b9;
+}
+
+/* Icône de fermeture (croix) */
+.close {
+    position: absolute;
+    top: 10px; 
+    left: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #808080; /* Gris par défaut */
+    cursor: pointer;
+    z-index: 100;
+}
+
+.close:hover {
+    color: #f44336; /* Rouge au survol pour indiquer qu'il s'agit d'un bouton */
+}
+
+
+
+
+
+
+
+/* Animation pour le swipe vers la droite */
+@keyframes swipe-right {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Animation pour le swipe vers la gauche */
+@keyframes swipe-left {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+/* Ajoute la classe lors du swipe */
+.swipe-right-active {
+    animation: swipe-right 0.5s forwards;
+}
+
+.swipe-left-active {
+    animation: swipe-left 0.5s forwards;
+}
+
