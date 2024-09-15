@@ -157,11 +157,17 @@ body {
     color: #f44336; /* Rouge au survol pour indiquer qu'il s'agit d'un bouton */
 }
 
-
-
-
-
-
+/* Animation pour le swipe vers la droite */
+@keyframes swipe-right {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
 
 /* Animation pour le swipe vers la droite */
 @keyframes swipe-right {
@@ -195,4 +201,5 @@ body {
 .swipe-left-active {
     animation: swipe-left 0.5s forwards;
 }
+
 
