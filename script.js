@@ -72,54 +72,50 @@ let startX = 0;
 let isSwiping = false;
 let currentCard = document.getElementById('swipeCard');
 
-// Fonction pour démarrer le swipe (utilisée à la fois pour tactile et souris)
-function startSwipe(x) {
-    startX = x;
+// Fonction pour démarrer le swipe
+currentCard.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
     isSwiping = true;
-    currentCard.classList.add('swiping');
-}
+});
 
-// Fonction pour suivre le swipe (utilisée pour tactile et souris)
-function moveSwipe(x) {
+// Fonction pour suivre le mouvement du doigt
+currentCard.addEventListener('touchmove', (e) => {
     if (!isSwiping) return;
-    const deltaX = x - startX;
-    currentCard.style.transform = `translate(${deltaX}px, -50%) rotate(${deltaX / 20}deg)`;
-}
 
-// Fonction pour terminer le swipe (utilisée pour tactile et souris)
-function endSwipe(x) {
+    const currentX = e.touches[0].clientX;
+    const deltaX = currentX - startX;
+
+    // Limite les mouvements de swipe (max 150px à gauche et droite)
+    if (Math.abs(deltaX) < 150) {
+        currentCard.style.transform = `translate(${deltaX}px, 0)`;
+    }
+});
+
+// Fonction pour terminer le swipe
+currentCard.addEventListener('touchend', (e) => {
     if (!isSwiping) return;
     isSwiping = false;
-    const deltaX = x - startX;
 
-    // Si le swipe est suffisant (ex: plus de 100px de décalage), faire disparaître la carte
+    const endX = e.changedTouches[0].clientX;
+    const deltaX = endX - startX;
+
+    // Si le swipe est suffisant (ex: plus de 100px), faire disparaître la carte
     if (Math.abs(deltaX) > 100) {
-        currentCard.style.transform = `translate(${deltaX > 0 ? 1000 : -1000}px, -50%) rotate(${deltaX > 0 ? 30 : -30}deg)`;
-        currentCard.style.opacity = '0';
+        currentCard.style.transition = 'transform 0.3s ease-out';
+        currentCard.style.transform = `translate(${deltaX > 0 ? 1000 : -1000}px, 0)`;
 
         setTimeout(() => {
-            currentCard.classList.remove('swiping');
-            currentCard.style.transform = 'translate(-50%, -50%) rotate(0deg)';
-            currentCard.style.opacity = '1';
-            nextProfile(); // Charger le profil suivant
+            currentCard.style.transition = '';
+            currentCard.style.transform = 'translate(0, 0)';
+            nextProfile(); // Charger le profil suivant après l'animation
         }, 300);
     } else {
-        // Si le swipe est annulé (pas assez loin), remettre la carte en place
-        currentCard.style.transform = 'translate(-50%, -50%) rotate(0deg)';
-        currentCard.classList.remove('swiping');
+        // Sinon, remettre la carte à sa position initiale
+        currentCard.style.transition = 'transform 0.3s ease-out';
+        currentCard.style.transform = 'translate(0, 0)';
+
+        setTimeout(() => {
+            currentCard.style.transition = '';
+        }, 300);
     }
-}
-
-// Gestion du swipe tactile (mobile)
-currentCard.addEventListener('touchstart', (e) => startSwipe(e.touches[0].clientX));
-currentCard.addEventListener('touchmove', (e) => moveSwipe(e.touches[0].clientX));
-currentCard.addEventListener('touchend', (e) => endSwipe(e.changedTouches[0].clientX));
-
-// Gestion du swipe avec la souris (PC)
-currentCard.addEventListener('mousedown', (e) => startSwipe(e.clientX));
-window.addEventListener('mousemove', (e) => {
-    if (isSwiping) moveSwipe(e.clientX);
-});
-window.addEventListener('mouseup', (e) => {
-    if (isSwiping) endSwipe(e.clientX);
 });
