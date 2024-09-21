@@ -1,0 +1,71 @@
+.modal{
+    display: none;
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+
+    box-sizing: border-box; 
+}
+
+/* Styles pour le formulaire dans la modale */
+.modal form {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacement entre les champs */
+}
+
+.modal label {
+    font-size: 16px;
+    margin-bottom: 5px; /* Espace entre le label et le champ */
+}
+
+.modal select,
+.modal input[type="text"] {
+    width: 100%; /* Assurer que le champ occupe 100% de la largeur disponible */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* S'assurer que le padding est inclus dans la largeur totale */
+}
+
+.modal button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.modal button:hover {
+    background-color: #2980b9;
+}
+
+/* Icône de fermeture (croix) */
+.close {
+    position: absolute;
+    top: 10px; 
+    left: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #808080; /* Gris par défaut */
+    cursor: pointer;
+    z-index: 11;
+}
+
+.close:hover {
+    color: red; /* Rouge au survol pour indiquer qu'il s'agit d'un bouton */
+}

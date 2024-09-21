@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Card Swipe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .job-info {
+            width: 300px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: height 0.3s ease;
+            overflow: hidden;
+            position: relative;
+            height: 150px; /* Hauteur initiale de l'élément sans description */
+        }
+
+        .job-description {
+            display: none;
+        }
+
+        .job-info.open .job-description {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="job-info" id="jobCard">
+        <h2 class="job-title">Card 1</h2>
+        <p class="job-city">City</p>
+        <p class="job-work-time">8:00</p>
+        <p class="salary">10k €</p>
+        <p class="job-description">This is the job description that will be revealed on swipe up.</p>
+    </div>
+
+    <script>
+        let jobCard = document.getElementById('jobCard');
+        let startY;
+        let isSwiping = false;
+        let threshold = 50; // Seuil pour déclencher l'ouverture ou la fermeture
+        let isOpen = false; // Indique si la description est ouverte ou non
+
+        // Gérer le début du swipe (tactile)
+        jobCard.addEventListener('touchstart', (e) => {
+            isSwiping = true;
+            startY = e.touches[0].clientY;
+        });
+
+        // Gérer le début du drag (souris)
+        jobCard.addEventListener('mousedown', (e) => {
+            isSwiping = true;
+            startY = e.clientY;
+        });
+
+        // Gérer le mouvement du swipe (tactile)
+        jobCard.addEventListener('touchmove', (e) => {
+            if (!isSwiping) return;
+            let deltaY = startY - e.touches[0].clientY;
+            handleSwipe(deltaY);
+        });
+
+        // Gérer le mouvement du drag (souris)
+        document.addEventListener('mousemove', (e) => {
+            if (!isSwiping) return;
+            let deltaY = startY - e.clientY;
+            handleSwipe(deltaY);
+        });
+
+        // Gérer la fin du swipe (tactile)
+        jobCard.addEventListener('touchend', (e) => {
+            isSwiping = false;
+            completeSwipe();
+        });
+
+        // Gérer la fin du drag (souris)
+        document.addEventListener('mouseup', () => {
+            isSwiping = false;
+            completeSwipe();
+        });
+
+        // Fonction pour gérer le swipe
+        function handleSwipe(deltaY) {
+            if (deltaY > threshold && !isOpen) {
+                // Swipe vers le haut
+                jobCard.classList.add('open');
+                jobCard.style.height = 'auto'; // Ajuste la hauteur pour révéler la description
+                isOpen = true;
+            } else if (deltaY < -threshold && isOpen) {
+                // Swipe vers le bas
+                jobCard.classList.remove('open');
+                jobCard.style.height = '150px'; // Revenir à la hauteur initiale
+                isOpen = false;
+            }
+        }
+
+        // Fonction pour finaliser le swipe
+        function completeSwipe() {
+            // Finalise la logique ici si nécessaire (pour du style, etc.)
+        }
+    </script>
+
+</body>
+</html>
