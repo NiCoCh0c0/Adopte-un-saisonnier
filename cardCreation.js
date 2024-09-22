@@ -7,6 +7,7 @@ let currentIndex = 0;
 function createCard() {
     const card = document.createElement('div');
     card.classList.add('card');
+    card.classList.add('reset-after-swipe');
     card.innerHTML = `
         <img class="profile-image" src="" alt="Profile image">
         <div class="job-info">

@@ -1,7 +1,3 @@
-let isSwipingCard = false;
-let startSwipingCardPos = { x: 0, y: 0 };
-let currentCard = null;
-
 function setupCardsSwiping(container) {
     container.forEach(card => {
         enableCardSwiping(card);
@@ -9,35 +5,43 @@ function setupCardsSwiping(container) {
 }
 
 function enableCardSwiping(card) {
+    let isSwipingCard = false;
+    let startSwipingCardPos = { x: 0, y: 0 };
     card.addEventListener('mousedown', (e) => {
         isSwipingCard = true;
         startSwipingCardPos.x = e.clientX;
         startSwipingCardPos.y = e.clientY;
-        currentCard = card;
     });
 
     document.addEventListener('mousemove', (e) => {
-        if (!isSwipingCard || !currentCard) return;
+        if (!isSwipingCard || !card) return;
         const deltaX = e.clientX - startSwipingCardPos.x;
         const deltaY = e.clientY - startSwipingCardPos.y;
     
-        currentCard.style.transform = `translate(${deltaX}px, ${deltaY}px) rotate(${deltaX * 0.05}deg)`;
+        card.style.transform = `translate(${deltaX}px, ${deltaY}px) rotate(${deltaX * 0.05}deg)`;
     });
     
     document.addEventListener('mouseup', (e) => {
-        if (!isSwipingCard || !currentCard) return;
+        if (!isSwipingCard || !card) return;
     
         const deltaX = e.clientX - startSwipingCardPos.x;
         if (deltaX > 100) {
             // Swiped right
-            currentCard.classList.add('swiped-right');
+            card.classList.add('swiped-right');
             showModal(); // Fonction de modal.js
         } else if (deltaX < -100) {
             // Swiped left
-            currentCard.classList.add('swiped-left');
+            card.classList.add('swiped-left');
+            card.addEventListener('transitionend', (e) => {
+                if (e.propertyName === 'transform') { 
+                    card.style.transform = ''; // Supprime le style inline
+                    shiftTopCard();
+                    showTopCard();
+                }
+            }, { once: true });
         } else {
             // Reset position if swipe wasn't far enough
-            currentCard.style.transform = '';
+            card.style.transform = '';
         }
     
         isSwipingCard = false;
@@ -46,7 +50,20 @@ function enableCardSwiping(card) {
 }
 
 function showTopCard() {
-    cards[0].style.zIndex = 1;
+    // Reset la carte en fond
+    const bottomCard = cards[cards.length - 1];
+    bottomCard.classList.remove('top');
+    bottomCard.classList.remove('swiped-left');
+    bottomCard.classList.add('reset-after-swipe');
+    
+    // Setup la carte du dessus
+    const topCard = cards[0];
+    topCard.classList.remove('reset-after-swipe');
+    topCard.classList.add('top');
 }
-
+function shiftTopCard() {
+    const topCard = cards.shift();
+    cards.push(topCard);
+    topCard.classList.remove('top');
+}
 // Gérer la rotation des cartes

@@ -1,4 +1,4 @@
-setupCards(cardContainer, 1);
+setupCards(cardContainer, cardsNumber);
 loadCardsContent();
 setupCardsSwiping(cards);
 setupDescriptionsSwiping(cards);

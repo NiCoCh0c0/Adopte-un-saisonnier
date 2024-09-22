@@ -13,8 +13,8 @@ function enableDescriptionSwiping(card) {
     let currentHeight = 0;
     
     // Sélectionne les éléments
-    const currentJobInfo = document.querySelector('.job-info');
-    const currentJobDescription = document.querySelector('.job-description');
+    const currentJobInfo = card.querySelector('.job-info');
+    const currentJobDescription = card.querySelector('.job-description');
     
     // Calcul de la hauteur maximale et minimale
     const currentJobInfoElementMaxHeight = currentJobInfo.scrollHeight; // Hauteur max complète

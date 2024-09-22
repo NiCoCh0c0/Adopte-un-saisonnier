@@ -1,3 +1,8 @@
+body {
+    user-select: none; /* Désactiver la sélection de texte */
+}
+
+
 .swipe-container {
     width: 100vw;
     height: 100vh;
@@ -14,19 +19,29 @@
 
     transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
-.card.active {
-    transform: translateX(0) translateY(0) rotate(0);
-    opacity: 1;
+.card.top {
+    z-index: 1;
 }
 
 .card.swiped-right {
+    position: fixed;
     transform: translateX(1000px) rotate(20deg);
     opacity: 0;
 }
 
 .card.swiped-left {
+    position: fixed;
     transform: translateX(-1000px) rotate(-20deg);
     opacity: 0;
+}
+
+.card.reset-after-swipe {
+    transform: none; /* Réinitialise la transformation */
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    position: absolute;
 }
 
 .card > img {
@@ -39,10 +54,6 @@
     bottom: 0px;
     width: 100%;
     padding: 0 25px;
-    border: red solid 1px;
 
     transition: height 0.3s ease-out;
-}
-p{
-    border: red solid 1px;
 }
