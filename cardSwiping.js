@@ -23,7 +23,6 @@ function enableCardSwiping(card) {
     
     document.addEventListener('mouseup', (e) => {
         if (!isSwipingCard || !card) return;
-    
         const deltaX = e.clientX - startSwipingCardPos.x;
         if (deltaX > 100) {
             // Swiped right
@@ -38,7 +37,6 @@ function enableCardSwiping(card) {
             // Reset position if swipe wasn't far enough
             card.style.transform = '';
         }
-    
         isSwipingCard = false;
         currentCard = null;
     });

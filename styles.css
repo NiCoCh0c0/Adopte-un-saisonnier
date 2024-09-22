@@ -49,6 +49,7 @@ body {
 .card > img {
     width: 100%;
     align-items: center;
+    pointer-events: none; /* Empêche l'image d'intercepter les événements */
 }
 .job-info{
     position: fixed;
