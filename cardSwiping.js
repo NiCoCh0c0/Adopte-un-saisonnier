@@ -49,17 +49,34 @@ function enableCardSwiping(card) {
         if (deltaX > 100) {
             // Swiped right
             card.classList.add('swiped-right');
+
+            // Arrêter le son du swipe à gauche
             leftSwipeSound.pause();
+            leftSwipeSound.currentTime = 0;
+
+            // Jouer le son du swipe à droite
             rightSwipeSound.currentTime = 0;
             rightSwipeSound.play();
+
+            // Déclencher les confettis
+            confetti({
+                particleCount: 100,  // Nombre de confettis
+                spread: 70,  // Angle de dispersion
+                origin: { x: 0.5, y: 0.5 },  // Position des confettis (centre)
+                colors: ['#bb0000', '#ffffff'],  // Couleurs des confettis
+            });
+
             showModal(); // Fonction de modal.js
             rollCards(card);
         } else if (deltaX < -100) {
             // Swiped left
             card.classList.add('swiped-left');
+            rightSwipeSound.currentTime = 0;
             rightSwipeSound.pause();
+
             leftSwipeSound.currentTime = 0;
             leftSwipeSound.play();
+
             rollCards(card);
         } else {
             // Réinitialisation si le swipe n'est pas assez loin
