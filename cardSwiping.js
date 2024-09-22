@@ -1,3 +1,6 @@
+const leftSwipeSound = document.getElementById('left-swipe-sound');
+const rightSwipeSound = document.getElementById('right-swipe-sound');
+
 function setupCardsSwiping(container) {
     container.forEach(card => {
         enableCardSwiping(card);
@@ -46,11 +49,17 @@ function enableCardSwiping(card) {
         if (deltaX > 100) {
             // Swiped right
             card.classList.add('swiped-right');
+            leftSwipeSound.pause();
+            rightSwipeSound.currentTime = 0;
+            rightSwipeSound.play();
             showModal(); // Fonction de modal.js
             rollCards(card);
         } else if (deltaX < -100) {
             // Swiped left
             card.classList.add('swiped-left');
+            rightSwipeSound.pause();
+            leftSwipeSound.currentTime = 0;
+            leftSwipeSound.play();
             rollCards(card);
         } else {
             // Réinitialisation si le swipe n'est pas assez loin
@@ -90,4 +99,3 @@ function rollCards(card) {
         }
     }, { once: true });
 }
-// Gérer la rotation des cartes
