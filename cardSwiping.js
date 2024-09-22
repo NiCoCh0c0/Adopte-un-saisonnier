@@ -35,8 +35,9 @@ function enableCardSwiping(card) {
             card.addEventListener('transitionend', (e) => {
                 if (e.propertyName === 'transform') { 
                     card.style.transform = ''; // Supprime le style inline
-                    shiftTopCard();
-                    showTopCard();
+                    placeAtBottom();
+                    showTopCard(cards[0]);
+                    setupSecondCard(cards[1]);
                 }
             }, { once: true });
         } else {
@@ -49,21 +50,19 @@ function enableCardSwiping(card) {
     });
 }
 
-function showTopCard() {
-    // Reset la carte en fond
-    const bottomCard = cards[cards.length - 1];
-    bottomCard.classList.remove('top');
-    bottomCard.classList.remove('swiped-left');
-    bottomCard.classList.add('reset-after-swipe');
-    
-    // Setup la carte du dessus
-    const topCard = cards[0];
-    topCard.classList.remove('reset-after-swipe');
-    topCard.classList.add('top');
+function showTopCard(newTopCard) {
+    newTopCard.classList.remove('second');
+    newTopCard.classList.add('top');
 }
-function shiftTopCard() {
-    const topCard = cards.shift();
-    cards.push(topCard);
-    topCard.classList.remove('top');
+function setupSecondCard(secondCard) {
+    secondCard.classList.remove('reset-after-swipe');
+    secondCard.classList.add('second');
+}
+function placeAtBottom() {
+    const newBottomCard = cards.shift();
+    cards.push(newBottomCard);
+    newBottomCard.classList.remove('top');
+    newBottomCard.classList.remove('swiped-left');
+    newBottomCard.classList.add('reset-after-swipe');
 }
 // Gérer la rotation des cartes

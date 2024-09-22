@@ -20,6 +20,9 @@ body {
     transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
 .card.top {
+    z-index: 2;
+}
+.card.second{
     z-index: 1;
 }
 
