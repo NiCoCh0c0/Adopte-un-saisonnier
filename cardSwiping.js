@@ -7,23 +7,42 @@ function setupCardsSwiping(container) {
 function enableCardSwiping(card) {
     let isSwipingCard = false;
     let startSwipingCardPos = { x: 0, y: 0 };
-    card.addEventListener('mousedown', (e) => {
-        isSwipingCard = true;
-        startSwipingCardPos.x = e.clientX;
-        startSwipingCardPos.y = e.clientY;
-    });
 
-    document.addEventListener('mousemove', (e) => {
+    // Fonction pour gérer le début du swipe (mousedown ou touchstart)
+    function startSwipe(x, y) {
+        isSwipingCard = true;
+        startSwipingCardPos.x = x;
+        startSwipingCardPos.y = y;
+    }
+
+    // Fonction pour gérer le mouvement du swipe (mousemove ou touchmove)
+    function moveSwipe(x, y) {
         if (!isSwipingCard || !card) return;
-        const deltaX = e.clientX - startSwipingCardPos.x;
-        const deltaY = e.clientY - startSwipingCardPos.y;
-    
+        const deltaX = x - startSwipingCardPos.x;
+        const deltaY = y - startSwipingCardPos.y;
+
         card.style.transform = `translate(${deltaX}px, ${deltaY}px) rotate(${deltaX * 0.05}deg)`;
-    });
-    
-    document.addEventListener('mouseup', (e) => {
+    }
+
+    // Fonction pour gérer la fin du swipe (mouseup ou touchend)
+    function endSwipe(x) {
         if (!isSwipingCard || !card) return;
-        const deltaX = e.clientX - startSwipingCardPos.x;
+        const deltaX = x - startSwipingCardPos.x;
+        handleSwipeEnd(deltaX, card);
+    }
+
+    // Écouteurs d'événements pour la souris
+    card.addEventListener('mousedown', (e) => startSwipe(e.clientX, e.clientY));
+    document.addEventListener('mousemove', (e) => moveSwipe(e.clientX, e.clientY));
+    document.addEventListener('mouseup', (e) => endSwipe(e.clientX));
+
+    // Écouteurs d'événements pour le tactile
+    card.addEventListener('touchstart', (e) => startSwipe(e.touches[0].clientX, e.touches[0].clientY));
+    document.addEventListener('touchmove', (e) => moveSwipe(e.touches[0].clientX, e.touches[0].clientY));
+    document.addEventListener('touchend', (e) => endSwipe(e.changedTouches[0].clientX));
+
+    // Fonction pour traiter la fin du swipe (swipe à gauche ou à droite)
+    function handleSwipeEnd(deltaX, card) {
         if (deltaX > 100) {
             // Swiped right
             card.classList.add('swiped-right');
@@ -34,12 +53,11 @@ function enableCardSwiping(card) {
             card.classList.add('swiped-left');
             rollCards(card);
         } else {
-            // Reset position if swipe wasn't far enough
+            // Réinitialisation si le swipe n'est pas assez loin
             card.style.transform = '';
         }
         isSwipingCard = false;
-        currentCard = null;
-    });
+    }
 }
 
 function showTopCard(newTopCard) {
@@ -57,6 +75,10 @@ function placeAtBottom() {
     newBottomCard.classList.remove('swiped-left');
     newBottomCard.classList.remove('swiped-right');
     newBottomCard.classList.add('reset-after-swipe');
+    
+    // Replier la description en utilisant la hauteur minimale stockée
+    const jobInfo = newBottomCard.querySelector('.job-info');
+    jobInfo.style.height = `${newBottomCard.minJobInfoHeight}px`; // Applique la hauteur minimale stockée
 }
 function rollCards(card) {
     card.addEventListener('transitionend', (e) => {
