@@ -29,17 +29,11 @@ function enableCardSwiping(card) {
             // Swiped right
             card.classList.add('swiped-right');
             showModal(); // Fonction de modal.js
+            rollCards(card);
         } else if (deltaX < -100) {
             // Swiped left
             card.classList.add('swiped-left');
-            card.addEventListener('transitionend', (e) => {
-                if (e.propertyName === 'transform') { 
-                    card.style.transform = ''; // Supprime le style inline
-                    placeAtBottom();
-                    showTopCard(cards[0]);
-                    setupSecondCard(cards[1]);
-                }
-            }, { once: true });
+            rollCards(card);
         } else {
             // Reset position if swipe wasn't far enough
             card.style.transform = '';
@@ -63,6 +57,17 @@ function placeAtBottom() {
     cards.push(newBottomCard);
     newBottomCard.classList.remove('top');
     newBottomCard.classList.remove('swiped-left');
+    newBottomCard.classList.remove('swiped-right');
     newBottomCard.classList.add('reset-after-swipe');
+}
+function rollCards(card) {
+    card.addEventListener('transitionend', (e) => {
+        if (e.propertyName === 'transform') { 
+            card.style.transform = ''; // Supprime le style inline
+            placeAtBottom();
+            showTopCard(cards[0]);
+            setupSecondCard(cards[1]);
+        }
+    }, { once: true });
 }
 // Gérer la rotation des cartes
