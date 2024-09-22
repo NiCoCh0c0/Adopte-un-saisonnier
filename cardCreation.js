@@ -1,6 +1,6 @@
 const profilesData = profiles; // Récupération des profils depuis profiles.js
 const cardContainer = document.querySelector('#card-container');
-let cardsNumber = 3; // Nombre de cartes à afficher
+let cardsNumber = profiles.length; // Nombre de cartes à afficher
 let cards = [];
 let currentIndex = 0;
 
