@@ -1,0 +1,198 @@
+%!Adobe-FontList 1.23
+%Locale:0x809
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:ADELIA
+FamilyName:ADELIA
+StyleName:Regular
+FullName:ADELIA
+MenuName:ADELIA
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\niko1\Downloads\Livrables\Livrables\Brandbook\Document fonts\ADELIA.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:29164
+FileModTime:1726934880
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,ADELIA
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:ChangaOne
+FamilyName:Changa One
+StyleName:Regular
+FullName:Changa One
+MenuName:Changa One
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\niko1\Downloads\Livrables\Livrables\Brandbook\Document fonts\ChangaOne-Regular.ttf
+DataFormat:sfntData
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:21364
+FileModTime:1726934880
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Changa One
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Gontserrat-LightItalic
+FamilyName:Montserrat
+StyleName:Light Italic
+FullName:Gontserrat Light Italic
+MenuName:Gontserrat Light
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:C:\Users\niko1\Downloads\Livrables\Livrables\Brandbook\Document fonts\Gontserrat-LightItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:168592
+FileModTime:1726934880
+WeightClass:300
+WidthClass:5
+AngleClass:1
+NameArray:0,Mac,4,Gontserrat Light Italic
+NameArray:0,Win,1,Gontserrat Light
+NameArray:0,Win,16,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Gontserrat-MediumItalic
+FamilyName:Montserrat
+StyleName:Medium Italic
+FullName:Gontserrat Medium Italic
+MenuName:Gontserrat Medium
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:C:\Users\niko1\Downloads\Livrables\Livrables\Brandbook\Document fonts\Gontserrat-MediumItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:169616
+FileModTime:1726934880
+WeightClass:500
+WidthClass:5
+AngleClass:1
+NameArray:0,Mac,4,Gontserrat Medium Italic
+NameArray:0,Win,1,Gontserrat Medium
+NameArray:0,Win,16,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Gontserrat-SemiBoldItalic
+FamilyName:Montserrat
+StyleName:SemiBold Italic
+FullName:Gontserrat SemiBold Italic
+MenuName:Gontserrat SemiBold
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:C:\Users\niko1\Downloads\Livrables\Livrables\Brandbook\Document fonts\Gontserrat-SemiBoldItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:169356
+FileModTime:1726934880
+WeightClass:600
+WidthClass:5
+AngleClass:1
+NameArray:0,Mac,4,Gontserrat SemiBold Italic
+NameArray:0,Win,1,Gontserrat SemiBold
+NameArray:0,Win,16,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-Bold
+FamilyName:Montserrat
+StyleName:Bold
+FullName:Montserrat Bold
+MenuName:Montserrat
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:C:\Users\niko1\Downloads\Livrables\Livrables\Brandbook\Document fonts\Montserrat-Bold.ttf
+DataFormat:sfntData
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:261588
+FileModTime:1726934880
+WeightClass:700
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Montserrat Bold
+NameArray:0,Win,1,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-BoldItalic
+FamilyName:Montserrat
+StyleName:Bold Italic
+FullName:Montserrat Bold Italic
+MenuName:Montserrat
+StyleBits:3
+WritingScript:Roman
+OutlineFileName:C:\Users\niko1\Downloads\Livrables\Livrables\Brandbook\Document fonts\Montserrat-BoldItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:266748
+FileModTime:1726934880
+WeightClass:700
+WidthClass:5
+AngleClass:1
+NameArray:0,Mac,4,Montserrat Bold Italic
+NameArray:0,Win,1,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-Regular
+FamilyName:Montserrat
+StyleName:Regular
+FullName:Montserrat Regular
+MenuName:Montserrat
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\niko1\Downloads\Livrables\Livrables\Brandbook\Document fonts\Montserrat-Regular.ttf
+DataFormat:sfntData
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:263192
+FileModTime:1726934880
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Montserrat Regular
+NameArray:0,Win,1,Montserrat
+%EndFont
+

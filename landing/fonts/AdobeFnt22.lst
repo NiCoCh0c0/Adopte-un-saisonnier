@@ -1,0 +1,224 @@
+%!Adobe-FontList 1.22
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:ADELIA
+FamilyName:ADELIA
+StyleName:Regular
+MenuName:ADELIA
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:ADELIA
+WritingScript:Roman
+OutlineFileName:/Users/Mathildemoreau/Documents/PROJETS/Adopte_un_saisonnier/Dossier Brandbook_2/Document fonts/ADELIA.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:29164
+FileModTime:568360572
+NameArray:0,Win,1,ADELIA
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:/Users/Mathildemoreau/Documents/PROJETS/Adopte_un_saisonnier/Dossier Brandbook_2/Document fonts/AdobeFnt22.lst
+FileLength:5204
+FileModTime:748622523
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:ChangaOne
+FamilyName:Changa One
+StyleName:Regular
+MenuName:Changa One
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Changa One
+WritingScript:Roman
+OutlineFileName:/Users/Mathildemoreau/Documents/PROJETS/Adopte_un_saisonnier/Dossier Brandbook_2/Document fonts/ChangaOne-Regular.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:21364
+FileModTime:745197816
+NameArray:0,Win,1,Changa One
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Gontserrat-LightItalic
+FamilyName:Montserrat
+StyleName:Light Italic
+MenuName:Gontserrat Light
+StyleBits:1
+WeightClass:300
+WidthClass:5
+AngleClass:1
+FullName:Gontserrat Light Italic
+WritingScript:Roman
+OutlineFileName:/Users/Mathildemoreau/Documents/PROJETS/Adopte_un_saisonnier/Dossier Brandbook_2/Document fonts/Gontserrat-LightItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:168592
+FileModTime:616202102
+NameArray:0,Mac,4,Gontserrat Light Italic
+NameArray:0,Win,1,Gontserrat Light
+NameArray:0,Win,16,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Gontserrat-MediumItalic
+FamilyName:Montserrat
+StyleName:Medium Italic
+MenuName:Gontserrat Medium
+StyleBits:1
+WeightClass:500
+WidthClass:5
+AngleClass:1
+FullName:Gontserrat Medium Italic
+WritingScript:Roman
+OutlineFileName:/Users/Mathildemoreau/Documents/PROJETS/Adopte_un_saisonnier/Dossier Brandbook_2/Document fonts/Gontserrat-MediumItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:169616
+FileModTime:616202102
+NameArray:0,Mac,4,Gontserrat Medium Italic
+NameArray:0,Win,1,Gontserrat Medium
+NameArray:0,Win,16,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Gontserrat-SemiBoldItalic
+FamilyName:Montserrat
+StyleName:SemiBold Italic
+MenuName:Gontserrat SemiBold
+StyleBits:1
+WeightClass:600
+WidthClass:5
+AngleClass:1
+FullName:Gontserrat SemiBold Italic
+WritingScript:Roman
+OutlineFileName:/Users/Mathildemoreau/Documents/PROJETS/Adopte_un_saisonnier/Dossier Brandbook_2/Document fonts/Gontserrat-SemiBoldItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:169356
+FileModTime:616202102
+NameArray:0,Mac,4,Gontserrat SemiBold Italic
+NameArray:0,Win,1,Gontserrat SemiBold
+NameArray:0,Win,16,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:MinionPro-Regular
+FamilyName:Minion Pro
+StyleName:Regular
+MenuName:Minion Pro
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Minion Pro
+WritingScript:Roman
+OutlineFileName:/Users/Mathildemoreau/Documents/PROJETS/Adopte_un_saisonnier/Dossier Brandbook_2/Document fonts/MinionPro-Regular.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:218640
+FileModTime:502106641
+DesignSize:110
+NameArray:0,Mac,4,Minion Pro
+NameArray:0,Win,1,Minion Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-Bold
+FamilyName:Montserrat
+StyleName:Bold
+MenuName:Montserrat
+StyleBits:2
+WeightClass:700
+WidthClass:5
+AngleClass:0
+FullName:Montserrat Bold
+WritingScript:Roman
+OutlineFileName:/Users/Mathildemoreau/Documents/PROJETS/Adopte_un_saisonnier/Dossier Brandbook_2/Document fonts/Montserrat-Bold.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:261588
+FileModTime:345423600
+NameArray:0,Mac,4,Montserrat Bold
+NameArray:0,Win,1,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-BoldItalic
+FamilyName:Montserrat
+StyleName:Bold Italic
+MenuName:Montserrat
+StyleBits:3
+WeightClass:700
+WidthClass:5
+AngleClass:1
+FullName:Montserrat Bold Italic
+WritingScript:Roman
+OutlineFileName:/Users/Mathildemoreau/Documents/PROJETS/Adopte_un_saisonnier/Dossier Brandbook_2/Document fonts/Montserrat-BoldItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:266748
+FileModTime:345423600
+NameArray:0,Mac,4,Montserrat Bold Italic
+NameArray:0,Win,1,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-Regular
+FamilyName:Montserrat
+StyleName:Regular
+MenuName:Montserrat
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Montserrat Regular
+WritingScript:Roman
+OutlineFileName:/Users/Mathildemoreau/Documents/PROJETS/Adopte_un_saisonnier/Dossier Brandbook_2/Document fonts/Montserrat-Regular.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:263192
+FileModTime:345423600
+NameArray:0,Mac,4,Montserrat Regular
+NameArray:0,Win,1,Montserrat
+%EndFont
+
